@@ -1,0 +1,25 @@
+a = int(input('Введи количество чисел: '))
+s = []
+for i in range(a):
+    b = int(input(''))
+    s.append(b)
+s.sort()
+print(s)
+d = int(input('Введи число, кторое нужно найти: '))
+m = len(s)//2
+low = 0
+high = len(s) - 1
+q = 1
+while s[m] != d and low <= high:
+    if d > s[m]:
+        low = m + 1
+    else:
+        high = m - 1
+    m = (low + high)//2
+    q = q + 1
+if low > high:
+    print('Такого числа нет')
+    print('Шаги', q)
+else:
+    print('У числа индекс', m)
+    print('Шаги', q)
